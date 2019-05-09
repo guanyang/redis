@@ -1,2 +1,2 @@
-# redis
-redis
+# redis-client
+redis-client

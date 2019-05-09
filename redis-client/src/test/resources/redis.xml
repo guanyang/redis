@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<config>
+	<!-- 基础参数配置 -->
+	<timeout>2000</timeout>
+	<!-- 连接池参数配置 -->
+	<poolConfig>
+		<maxTotle>20</maxTotle>
+		<maxIdle>5</maxIdle>
+		<maxWait>5000</maxWait>
+	</poolConfig>
+	<!-- Sentinel服务器参数配置 -->
+	<sentinels>
+		<sentinel>
+			<ip>172.19.59.22</ip>
+			<port>26379</port>
+		</sentinel>
+		<sentinel>
+			<ip>172.19.59.23</ip>
+			<port>26379</port>
+		</sentinel>
+		<sentinel>
+			<ip>172.19.59.24</ip>
+			<port>26379</port>
+		</sentinel>
+	</sentinels>
+	<!-- 数据分片参数配置 -->
+	<shards>
+		<shardName>mymaster1</shardName>
+		<shardName>mymaster2</shardName>
+		<shardName>mymaster3</shardName>
+	</shards>
+	<!-- 读写策略参数配置 -->
+	<forceMasterkeys>
+		<keyPattern>GY:DEMO:LOCK*</keyPattern>
+	</forceMasterkeys>
+	<forceMaster>false</forceMaster>
+</config>
